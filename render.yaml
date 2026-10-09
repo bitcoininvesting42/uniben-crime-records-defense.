@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: uniben-crime-records-defense
+    runtime: python
+    plan: free
+    buildCommand: python -m compileall -q server.py
+    startCommand: python server.py
+    healthCheckPath: /api/health
+    envVars:
+      - key: CRIS_HOST
+        value: 0.0.0.0
+      - key: CRIS_PUBLIC_DEMO
+        value: '1'
+      - key: CRIS_ADMIN_PASSWORD
+        sync: false
+      - key: CRIS_OFFICER_PASSWORD
+        sync: false
+      - key: CRIS_ANALYST_PASSWORD
+        sync: false
