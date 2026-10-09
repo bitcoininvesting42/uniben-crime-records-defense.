@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="University of Benin Crime Records and Information System — academic demonstration project by Eguasa Omorogbe." />
+  <meta name="theme-color" content="#0b1627" />
+  <title>CRIS | Crime Records & Information System</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <section id="loginScreen" class="login-screen">
+    <div class="login-visual">
+      <div class="login-mesh"></div>
+      <div class="brand brand-login"><span class="brand-icon" data-icon="shield"></span><span><strong>CRIS<span class="brand-dot">.</span></strong><small>Crime Records & Information System</small></span></div>
+      <div class="login-visual-inner">
+        <div class="eyebrow light"><span class="pulse-dot"></span> UNIVERSITY OF BENIN · FINAL YEAR PROJECT</div>
+        <h1>Intelligence begins<br>with <em>better records.</em></h1>
+        <p>A centralised workspace for documenting incidents, managing case files, and transforming records into actionable information.</p>
+        <div class="login-preview">
+          <div class="preview-top"><div class="preview-symbol" data-icon="activity"></div><div><span class="preview-overline">SYSTEM OVERVIEW</span><strong>Built for clarity. Designed for accountability.</strong></div><div class="preview-online"><span></span> Demo ready</div></div>
+          <div class="preview-grid"><div><span>CASE MANAGEMENT</span><b data-icon="folder-check"></b></div><div><span>ROLE-BASED ACCESS</span><b data-icon="lock-keyhole"></b></div><div><span>LIVE REPORTING</span><b data-icon="chart-no-axes-combined"></b></div></div>
+          <div class="preview-footer"><span data-icon="shield-check"></span> Secure workflows · Audit history · Structured records</div>
+        </div>
+      </div>
+      <div class="login-credit"><span>Research demonstration · October 2026</span><span>Designed & implemented by Eguasa Omorogbe</span></div>
+    </div>
+    <div class="login-panel">
+      <div class="login-card">
+        <div class="login-emblem"><span data-icon="fingerprint"></span></div>
+        <div class="login-smallcap">WELCOME TO THE SYSTEM</div>
+        <h2>Sign in to your workspace</h2>
+        <p class="login-help">Access the Crime Records & Information System demonstration environment.</p>
+        <form id="loginForm" autocomplete="off">
+          <label for="username">Username</label>
+          <div class="field-icon"><span data-icon="user-round"></span><input id="username" name="username" placeholder="Enter username" required autocomplete="username" /></div>
+          <div class="login-password-label"><label for="password">Password</label><span>Restricted access</span></div>
+          <div class="field-icon"><span data-icon="lock-keyhole"></span><input id="password" name="password" type="password" placeholder="Enter password" required autocomplete="current-password" /><button class="field-end" id="togglePassword" type="button" aria-label="Show password"><span data-icon="eye"></span></button></div>
+          <div id="loginError" class="login-error" role="alert" hidden></div>
+          <button class="button button-primary sign-in" id="loginBtn" type="submit">Sign in to dashboard <span data-icon="arrow-up-right"></span></button>
+        </form>
+        <div class="demo-disclaimer"><span data-icon="info"></span><span>Educational prototype. All records and identities are fictional. Do not enter real personal information.</span></div>
+      </div>
+      <div class="login-meta"><span>University of Benin</span><span>Project ID: PSC1911608</span></div>
+    </div>
+  </section>
+
+  <div id="appShell" class="app-shell" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand"><div class="side-brand-mark" data-icon="shield"></div><div><div class="side-brand-main">CRIS<span>.</span></div><div class="side-brand-caption">RECORDS INTELLIGENCE</div></div></div>
+      <div class="side-project-pill"><span class="pill-dot"></span> UNIBEN PROJECT · 2026</div>
+      <div class="sidebar-scroll">
+        <div class="nav-label">WORKSPACE</div>
+        <nav id="mainNav" aria-label="Main navigation"></nav>
+        <div class="nav-label nav-label-second">SYSTEM & ANALYTICS</div>
+        <nav id="secondaryNav" aria-label="System navigation"></nav>
+      </div>
+      <div class="sidebar-bottom"><div class="sidebar-help"><span data-icon="graduation-cap"></span><div><strong>Project Defense Mode</strong><span>Explore the system modules</span></div><button id="helpShortcut" type="button" aria-label="Open project guide"><span data-icon="arrow-up-right"></span></button></div><button type="button" class="sidebar-logout" id="sideLogout"><span data-icon="log-out"></span> Sign out <span data-icon="arrow-right" class="end-arrow"></span></button></div>
+    </aside>
+    <div class="mobile-shade" id="mobileShade"></div>
+    <div class="app-content">
+      <header class="topbar"><div class="topbar-start"><button id="mobileMenu" class="icon-button mobile-menu" aria-label="Open menu"><span data-icon="menu"></span></button><span class="topbar-path">Workspace</span><span class="topbar-slash">/</span><span id="currentCrumb">Overview</span></div><div class="topbar-end"><span class="demo-indicator"><span></span> DEMO ENVIRONMENT</span><div class="top-divider"></div><button type="button" id="profileButton" class="profile"><span class="avatar" id="avatar">SA</span><span class="profile-copy"><strong id="profileName">System Administrator</strong><small id="profileRole">Administrator</small></span><span data-icon="chevron-down"></span></button></div></header>
+      <main id="view" class="content" tabindex="-1" aria-live="polite"></main>
+      <footer class="site-footer"><span>© 2026 CRIS · University of Benin · Academic Demonstration</span><span>Designed by Eguasa Omorogbe <span class="sep">·</span> PSC1911608</span></footer>
+    </div>
+  </div>
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-area" aria-live="polite"></div>
+</body>
+</html>
